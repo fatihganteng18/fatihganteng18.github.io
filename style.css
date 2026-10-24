@@ -1,0 +1,71 @@
+@font-face{
+    font-family: 'Zelda';
+    src: url(The\ Wild\ Breath\ of\ Zelda_D-day.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-zelda {
+    font-family: 'Zelda', sans-serif;
+}
+
+.font-times {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+section {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+h1 {
+font-size: 128px;
+}
+
+p {
+    padding-left: 100px;
+    padding-right: 100px;
+    font-family: 32px;
+}
+
+#hero{
+    background-color: red;
+}
+
+h2 {
+    font-size: 80px;
+}
+
+h3 {
+    font-size: 48px;
+    color: red
+}
+
+#skills {
+    text-align: left;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skills ul {
+    font-size: 32px;
+    list-style-type: inside;
+}
+
+img {
+    width: 600px;
+    height: 300px;
+    margin: 20px;
+} */
