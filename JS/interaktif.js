@@ -185,21 +185,3 @@ if (firefliesBox && !prefersReducedMotion) {
     }
 }
 
-// ===== 8. Jejak bintang mengikuti kursor (hanya di laptop/PC) =====
-if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    let lastSparkle = 0;
-
-    document.addEventListener('mousemove', (event) => {
-        const now = Date.now();
-        if (now - lastSparkle < 50) return; // batasi jumlah bintang agar tidak berat
-        lastSparkle = now;
-
-        const sparkle = document.createElement('span');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = event.clientX + (Math.random() * 16 - 8) + 'px';
-        sparkle.style.top = event.clientY + (Math.random() * 16 - 8) + 'px';
-        document.body.appendChild(sparkle);
-
-        sparkle.addEventListener('animationend', () => sparkle.remove());
-    });
-}
