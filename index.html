@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simetri — Crew 04</title>
+    <title>My Portfolio</title>
     <!-- Tailwind CSS v4 (dibutuhkan untuk text-shadow-[...], mt-100, px-15, dll) -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
     <link rel="stylesheet" href="D-Day.css">
@@ -94,21 +94,22 @@
         <div id="fireflies" class="fixed inset-0 -z-5 pointer-events-none overflow-hidden"></div>
 
         <!-- Section 1: Hero -->
-        <section id="hero" class="expedition-hero w-full flex flex-col pt-[166px] md:pt-[270.5px] justify-center items-center gap-4">
-            <p class="expedition-kicker">PORTOFOLIO <span>•</span> KELOMPOK 4</p>
+        <section id="hero" class="w-full flex flex-col pt-[166px] md:pt-[270.5px] justify-center items-center gap-4">
             <h1 id="hero-title" class="animate-float uppercase text-[4rem] md:text-[6rem] lg:text-[8rem] text-white text-center [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] lg:text-shadow-[0_10px_0_#7A3D21] leading-none">
-                KELOMPOK 4
+                About Us
             </h1>
 
-            <div class="expedition-tagline reveal reveal-delay-1">
-                <p id="typed-name" class="font-times">
-                    Satu tim, banyak cerita.
+            <!-- Gulungan Kertas Nama -->
+            <div class="reveal reveal-delay-1 flex min-w-[338px] lg:w-[700.39px] aspect-[341/43] items-center justify-center bg-[url('Hero/paper-scroll-hero-mobile.svg')] lg:bg-[url('Hero/paper-scroll-hero-desktop.svg')] bg-center bg-cover lg:bg-contain bg-no-repeat pb-1.5">
+                <p id="typed-name" class="text-[#7A3D21] text-[1.7rem] md:text-[2rem] font-times font-bold">
+                    Fore Minds One Vision
                 </p>
             </div>
 
+            <!-- Tombol Explore More -->
             <div class="reveal reveal-delay-2 flex w-full justify-center items-center transition-all duration-100 hover:brightness-90 mt-4">
                 <a href="#aboutme" class="btn-shine btn-shine-auto relative transition-transform duration-100 hover:-translate-y-0.5 active:translate-y-[6px] active:drop-shadow-[0_2px_0_#592918] px-[51px] py-[4px] md:px-[119.5px] md:py-[8px] bg-[linear-gradient(to_bottom,#4AA294_0%,#5AB3AD_50%,#4AA294_50%,#4AA294_100%)] rounded-[8px] border-[#5AB2AD] border-[1px] outline-[#5AB2AD] outline-[1px] drop-shadow-[0_8px_0_#592918]">
-                    <p class="uppercase text-white text-[1.3rem] md:text-[1.75rem] md:leading-none">KENALI KAMI</p>
+                    <p class="uppercase text-white text-[1.3rem] md:text-[1.75rem] md:leading-none">EXPLORE MORE</p>
                 </a>
             </div>
         </section>
@@ -122,9 +123,8 @@
                 </div>
             </div>
             <div class="reveal reveal-delay-1 order-2 lg:order-1 flex flex-col gap-4 max-w-[560px] text-center lg:text-left">
-                <p class="section-kicker">01 / SIAPA KAMI</p>
                 <h2 class="uppercase text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] text-white [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] lg:text-shadow-[0_10px_0_#7A3D21] leading-none">
-                    KELOMPOK 4
+                    ABOUT<span class="hidden lg:inline"> KELOMPOK 4</span>
                 </h2>
                 <p class="font-times text-[#F9DCB4] text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] leading-snug text-justify">
                     Halo semua! Kami adalah kelompok 4 yang terdiri dari lima anggota yang memiliki keunikan masing-masing. Kami berkomitmen untuk bekerja sama dan saling mendukung dalam mencapai tujuan bersama. Setiap anggota membawa keahlian dan perspektif yang berbeda, sehingga kami dapat menciptakan solusi kreatif dan inovatif. Kami percaya bahwa kolaborasi adalah kunci kesuksesan, dan kami siap menghadapi tantangan dengan semangat dan dedikasi. Dengan di dampingi 2 Kakak Mentor yaitu Kak Galang dan Kak Privthy, kami yakin dapat mencapai hasil yang luar biasa. Terima kasih telah mengunjungi portofolio kami, dan kami berharap dapat berbagi pengalaman dan pencapaian kami dengan Anda!
@@ -135,9 +135,8 @@
         <!-- Section 3: My Skills -->
         <section id="myskills" class="flex justify-center mt-100 px-4">
             <div class="reveal flex flex-col text-center gap-4">
-            <p class="section-kicker">02 / CATATAN TIM</p>
             <h2 class="uppercase text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] text-white [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] lg:text-shadow-[0_10px_0_#7A3D21] leading-none">
-                YANG MEMBUAT KAMI UNIK
+                OUR SKILLS
             </h2>
             <div class="relative">
                 <!-- Papan Kayu Desktop & Mobile -->
@@ -172,17 +171,16 @@
         <!-- Section 4: My Experience -->
         <section id="experience" class="mt-100 mb-50">
             <div class="flex flex-col gap-[1rem] items-center">
-                <p class="section-kicker">03 / JEJAK PERJALANAN</p>
                 <h2 class="text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] text-white [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] text-center uppercase reveal">
-                    KAMI DI LAPANGAN
+                    OURS EXPERIENCE
                 </h2>
 
                 <!-- Grid Galeri Foto 2x2 -->
-                <div class="expedition-gallery reveal reveal-left flex flex-col md:flex-row gap-[1rem]">
+                <div class="reveal reveal-left flex flex-col md:flex-row gap-[1rem]">
                     <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku1.png" alt="Fatih">
                     <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku2.png" alt="Ayun">
                 </div>
-                <div class="expedition-gallery reveal reveal-right flex flex-col md:flex-row gap-[1rem]">
+                <div class="reveal reveal-right flex flex-col md:flex-row gap-[1rem]">
                     <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku3.png" alt="Rahma">
                     <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku4.png" alt="Zulfa">
                 </div>

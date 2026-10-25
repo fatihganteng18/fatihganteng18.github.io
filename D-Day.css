@@ -281,275 +281,105 @@ section {
     .js .hero-letter, .js .stagger-item { opacity: 1; animation: none; }
 }
 
-/* Identidade visual: diário de uma expedição em equipe */
+/* Aksen sederhana untuk membedakan halaman kelompok */
 body main #hero.expedition-hero {
-    position: relative;
-    isolation: isolate;
-    min-height: min(820px, calc(100svh - 90px));
-    padding: 100px 24px 84px;
-    gap: 24px;
-    overflow: hidden;
-    background:
-        radial-gradient(ellipse at 50% 52%, rgba(11, 46, 48, 0.8), rgba(4, 15, 19, 0.18) 65%),
-        linear-gradient(180deg, rgba(5, 19, 24, 0.18), rgba(5, 19, 24, 0.5));
+    min-height: 0;
+    gap: 1rem;
 }
 
-.expedition-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    opacity: 0.2;
-    background-image:
-        linear-gradient(rgba(170, 220, 197, 0.16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(170, 220, 197, 0.16) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: linear-gradient(transparent, black 22%, black 78%, transparent);
+.expedition-hero::before,
+.expedition-hero::after,
+.expedition-compass,
+.expedition-scroll {
+    display: none;
 }
 
-.expedition-hero::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    left: 50%;
-    width: min(72vw, 760px);
-    height: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, transparent, rgba(111, 210, 185, 0.75), rgba(247, 181, 88, 0.65), transparent);
-}
-
-.expedition-compass {
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    width: clamp(230px, 40vw, 520px);
-    aspect-ratio: 1;
-    border: 1px solid rgba(174, 219, 198, 0.28);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: compass-turn 70s linear infinite;
-}
-
-.expedition-compass::before,
-.expedition-compass::after {
-    content: '';
-    position: absolute;
-    inset: 12%;
-    border: 1px dashed rgba(247, 181, 88, 0.38);
-    border-radius: 50%;
-}
-
-.expedition-compass::after {
-    inset: 28%;
-    border-style: solid;
-    border-color: rgba(174, 219, 198, 0.18);
-}
-
-.expedition-compass span {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #f7b558;
-    box-shadow: 0 0 18px rgba(247, 181, 88, 0.9);
-}
-
-.expedition-kicker,
-.section-kicker {
+.expedition-kicker {
     margin: 0;
-    color: #a7d8c6;
+    color: #f9dcb4;
     font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(0.75rem, 1.3vw, 0.95rem);
-    letter-spacing: 0.22em;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
     text-align: center;
     text-transform: uppercase;
 }
 
 .expedition-kicker span {
-    padding: 0 0.6rem;
-    color: #f7b558;
+    padding: 0 0.35rem;
+    color: #f3b641;
 }
 
 .expedition-hero #hero-title {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    color: #f5f0dc;
-    font-size: clamp(4rem, 13vw, 10rem);
-    letter-spacing: 0.045em;
-    line-height: 0.95;
-    -webkit-text-stroke: 0;
-    text-shadow: 0 10px 45px rgba(4, 15, 19, 0.7), 0 2px 0 rgba(247, 181, 88, 0.6);
+    letter-spacing: 0.02em;
 }
 
 .page-loaded .expedition-hero .hero-letter {
-    animation-name: map-mark-arrive;
-    animation-duration: 0.8s;
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    animation-delay: calc(var(--i) * 75ms);
+    animation-name: title-fade-in;
+    animation-duration: 0.45s;
+    animation-timing-function: ease-out;
 }
 
 .expedition-hero .hero-letter:hover {
     color: #f7b558;
-    translate: 0 -5px;
+    translate: 0 -3px;
 }
 
 .expedition-tagline {
-    position: relative;
-    min-width: min(330px, 86vw);
-    padding: 12px 28px;
-    border: 1px solid rgba(167, 216, 198, 0.45);
-    border-right-color: rgba(247, 181, 88, 0.7);
-    background: rgba(5, 25, 29, 0.58);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(8px);
+    display: flex;
+    width: min(700px, 94vw);
+    min-width: 0;
+    aspect-ratio: 341 / 43;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    background: url('Hero/paper-scroll-hero-mobile.svg') center / 100% 100% no-repeat;
     text-align: center;
 }
 
-.expedition-tagline::before,
-.expedition-tagline::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 18px;
-    height: 1px;
-    background: #f7b558;
-}
-
-.expedition-tagline::before { left: -9px; }
-.expedition-tagline::after { right: -9px; }
-
 .expedition-tagline p {
     margin: 0;
-    color: #f5f0dc;
-    font-size: clamp(1.1rem, 2vw, 1.45rem);
-    letter-spacing: 0.04em;
-}
-
-.expedition-hero .btn-shine {
-    border-color: #a7d8c6;
-    background: linear-gradient(135deg, #1d756d, #319b88 55%, #176158);
-    outline-color: rgba(167, 216, 198, 0.75);
-    box-shadow: 0 7px 0 #092f32;
-}
-
-.expedition-scroll {
-    position: absolute;
-    bottom: 22px;
-    left: 50%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: rgba(245, 240, 220, 0.75);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-decoration: none;
-    transform: translateX(-50%);
-}
-
-.expedition-scroll span {
-    width: 20px;
-    height: 30px;
-    border: 1px solid rgba(167, 216, 198, 0.7);
-    border-radius: 12px;
-}
-
-.expedition-scroll span::after {
-    content: '';
-    display: block;
-    width: 3px;
-    height: 6px;
-    margin: 6px auto;
-    border-radius: 2px;
-    background: #f7b558;
-    animation: route-pulse 1.6s ease-in-out infinite;
+    color: #7a3d21;
+    font-size: clamp(1rem, 3.8vw, 1.4rem);
 }
 
 .section-kicker {
     color: #f7b558;
-}
-
-.expedition-gallery .exp-photo {
-    border: 4px solid rgba(245, 240, 220, 0.9);
-    border-radius: 2px;
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
-    transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease;
-}
-
-.expedition-gallery .exp-photo:first-child {
-    transform: rotate(-1.5deg);
-}
-
-.expedition-gallery .exp-photo:last-child {
-    transform: rotate(1.5deg);
-}
-
-.expedition-gallery .exp-photo:hover,
-.expedition-gallery .exp-photo:focus-visible {
-    z-index: 1;
-    transform: translateY(-8px) rotate(0) scale(1.025);
-    box-shadow: 0 26px 50px rgba(0, 0, 0, 0.48);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
 }
 
 .nav-scrolled {
-    background-color: rgba(5, 25, 29, 0.88);
-    box-shadow: 0 1px 0 rgba(167, 216, 198, 0.35);
+    background-color: rgba(76, 28, 14, 0.7);
+    box-shadow: 0 4px 0 rgba(89, 41, 24, 0.45);
 }
 
 .nav-link.is-active {
-    color: #a7d8c6;
+    color: #f3b641;
     text-decoration-color: #f7b558;
     text-underline-offset: 0.3em;
 }
 
-@keyframes map-mark-arrive {
-    from { opacity: 0; transform: translateY(24px) scale(0.92); filter: blur(8px); }
-    to { opacity: 1; transform: none; filter: blur(0); }
-}
-
-@keyframes compass-turn {
-    to { rotate: 360deg; }
-}
-
-@keyframes route-pulse {
-    0%, 100% { opacity: 0.45; transform: translateY(0); }
-    50% { opacity: 1; transform: translateY(8px); }
+@keyframes title-fade-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
 }
 
 @media (max-width: 640px) {
-    body main #hero.expedition-hero {
-        min-height: min(720px, calc(100svh - 72px));
-        padding-top: 110px;
-        padding-bottom: 86px;
-    }
-
-    .expedition-compass {
-        top: 46%;
-        width: 74vw;
-    }
-
     .expedition-kicker {
-        max-width: 90vw;
-        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .expedition-tagline {
+        background-image: url('Hero/paper-scroll-hero-desktop.svg');
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .expedition-compass,
-    .expedition-scroll span::after,
     .page-loaded .expedition-hero .hero-letter {
         animation: none;
-    }
-
-    .expedition-gallery .exp-photo,
-    .expedition-gallery .exp-photo:hover,
-    .expedition-gallery .exp-photo:focus-visible {
-        transform: none;
     }
 }
 
