@@ -1,44 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS v4 (dibutuhkan untuk text-shadow-[...], mt-100, px-15, dll) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
     <link rel="stylesheet" href="D-Day.css">
+    <!-- Tandai bahwa JavaScript aktif, supaya animasi .reveal hanya jalan kalau JS ada -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body class="font-zelda bg-black text-white m-0 p-0">
 
+    <!-- Layar loading -->
+    <div id="preloader" class="preloader fixed inset-0 z-[100] flex-col items-center justify-center gap-6 bg-[#2B1208]">
+        <img class="preloader-logo h-20 w-auto" src="Navbar/navbar-logo.svg" alt="">
+        <p class="loading-dots text-[#F9DCB4] text-[2rem]">Loading<span>.</span><span>.</span><span>.</span></p>
+    </div>
+
+    <!-- Garis progres scroll di paling atas -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[4px] w-0 z-[70] bg-[linear-gradient(to_right,#4AA294,#F3B641)]"></div>
+
     <!-- Header & Navbar Navigation -->
     <header class="z-[60] sticky top-0">
-        <nav class="relative z-[60] flex items-center justify-between backdrop-filter backdrop-blur-md bg-opacity-40 sm:px-6 md:px-[16px] lg:px-[90px] h-[90px]">
+        <nav id="navbar" class="relative z-[60] transition-colors duration-300 flex items-center justify-between backdrop-filter backdrop-blur-md bg-opacity-40 sm:px-6 md:px-[16px] lg:px-[90px] h-[90px]">
             <div class="flex flex-row items-center gap-[16px]">
-                <img class="sm:h-12 lg:h-14 w-auto" src="Navbar/navbar-logo.svg" alt="Home">
+                <img class="logo-wiggle sm:h-12 lg:h-14 w-auto" src="Navbar/navbar-logo.svg" alt="Home">
 
                 <ul class="hidden lg:flex flex-row gap-[64px] text-white text-[2rem]">
-                    <li><a class="hover:underline hover:text-[#F3B641]" href="#hero">Home</a></li>
-                    <li><a class="hover:underline hover:text-[#F3B641]" href="#aboutme">About Me</a></li>
-                    <li><a class="hover:underline hover:text-[#F3B641]" href="#myskills">My Skills</a></li>
-                    <li><a class="hover:underline hover:text-[#F3B641]" href="#experience">My Experience</a></li>
+                    <li><a class="nav-link hover:underline hover:text-[#F3B641]" href="#hero">Home</a></li>
+                    <li><a class="nav-link hover:underline hover:text-[#F3B641]" href="#aboutme">About Me</a></li>
+                    <li><a class="nav-link hover:underline hover:text-[#F3B641]" href="#myskills">My Skills</a></li>
+                    <li><a class="nav-link hover:underline hover:text-[#F3B641]" href="#experience">My Experience</a></li>
                 </ul>
             </div>
 
             <!-- Ikon Media Sosial -->
             <div class="flex flex-row items-center gap-3">
                 <div class="hidden lg:flex lg:flex-row items-center gap-[15px]">
-                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70" target="_blank">
+                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70 hover:-translate-y-1" target="_blank">
                         <img class="w-11" src="Navbar/x-logo.svg" alt="X">
                     </a>
-                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70" target="_blank">
+                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70 hover:-translate-y-1" target="_blank">
                         <img class="w-11" src="Navbar/tiktok-logo.svg" alt="tiktok">
                     </a>
-                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70" target="_blank">
+                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70 hover:-translate-y-1" target="_blank">
                         <img class="w-11" src="Navbar/ig-logo.svg" alt="instagram">
                     </a>
-                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70" target="_blank">
+                    <a href="https://x.com/HMSI_ITS" class="transition duration-200 ease-in-out hover:grayscale hover:opacity-70 hover:-translate-y-1" target="_blank">
                         <img class="w-11" src="Navbar/yt-logo.svg" alt="youtube">
                     </a>
                 </div>
@@ -56,16 +67,16 @@
             <div class="h-[90px]"></div>
             <ul class="flex flex-col items-center text-center py-6 text-white text-[2rem]">
                 <li class="w-full py-4">
-                    <a class="hover:underline hover:text-[#F3B641]" href="#hero">Home</a>
+                    <a class="nav-link hover:underline hover:text-[#F3B641]" href="#hero">Home</a>
                 </li>
                 <li class="w-full py-4">
-                    <a class="hover:underline hover:text-[#F3B641]" href="#aboutme">About Me</a>
+                    <a class="nav-link hover:underline hover:text-[#F3B641]" href="#aboutme">About Me</a>
                 </li>
                 <li class="w-full py-4">
-                    <a class="hover:underline hover:text-[#F3B641]" href="#myskills">My Skills</a>
+                    <a class="nav-link hover:underline hover:text-[#F3B641]" href="#myskills">My Skills</a>
                 </li>
                 <li class="w-full py-4">
-                    <a class="hover:underline hover:text-[#F3B641]" href="#experience">Experience</a>
+                    <a class="nav-link hover:underline hover:text-[#F3B641]" href="#experience">My Experience</a>
                 </li>
             </ul>
         </div>
@@ -79,22 +90,25 @@
         <!-- Background Overlay (dikontrol via bgScrollEffect.js) -->
         <div id="bg-overlay" class="fixed inset-0 -z-10 bg-black opacity-0 pointer-events-none"></div>
 
+        <!-- Kunang-kunang (dibuat otomatis oleh JS/interactive.js) -->
+        <div id="fireflies" class="fixed inset-0 -z-5 pointer-events-none overflow-hidden"></div>
+
         <!-- Section 1: Hero -->
         <section id="hero" class="w-full flex flex-col pt-[166px] md:pt-[270.5px] justify-center items-center gap-4">
-            <h1 class="uppercase text-[4rem] md:text-[6rem] lg:text-[8rem] text-white text-center [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] lg:text-shadow-[0_10px_0_#7A3D21] leading-none">
+            <h1 id="hero-title" class="animate-float uppercase text-[4rem] md:text-[6rem] lg:text-[8rem] text-white text-center [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] lg:text-shadow-[0_10px_0_#7A3D21] leading-none">
                 My Portfolio
             </h1>
 
             <!-- Gulungan Kertas Nama -->
-            <div class="flex min-w-[338px] lg:w-[700.39px] aspect-[341/43] items-center justify-center bg-[url('Hero/paper-scroll-hero-mobile.svg')] lg:bg-[url('Hero/paper-scroll-hero-desktop.svg')] bg-center bg-cover lg:bg-contain bg-no-repeat pb-1.5">
-                <p class="text-[#7A3D21] text-[1.7rem] md:text-[2rem] font-times font-bold">
+            <div class="reveal reveal-delay-1 flex min-w-[338px] lg:w-[700.39px] aspect-[341/43] items-center justify-center bg-[url('Hero/paper-scroll-hero-mobile.svg')] lg:bg-[url('Hero/paper-scroll-hero-desktop.svg')] bg-center bg-cover lg:bg-contain bg-no-repeat pb-1.5">
+                <p id="typed-name" class="text-[#7A3D21] text-[1.7rem] md:text-[2rem] font-times font-bold">
                     Muhammad Fatih Adillah
                 </p>
             </div>
 
             <!-- Tombol Explore More -->
-            <div class="flex w-full justify-center items-center transition-all duration-100 hover:brightness-90 mt-4">
-                <a href="#aboutme" class="px-[51px] py-[4px] md:px-[119.5px] md:py-[8px] bg-[linear-gradient(to_bottom,#4AA294_0%,#5AB3AD_50%,#4AA294_50%,#4AA294_100%)] rounded-[8px] border-[#5AB2AD] border-[1px] outline-[#5AB2AD] outline-[1px] drop-shadow-[0_8px_0_#592918]">
+            <div class="reveal reveal-delay-2 flex w-full justify-center items-center transition-all duration-100 hover:brightness-90 mt-4">
+                <a href="#aboutme" class="btn-shine btn-shine-auto relative transition-transform duration-100 hover:-translate-y-0.5 active:translate-y-[6px] active:drop-shadow-[0_2px_0_#592918] px-[51px] py-[4px] md:px-[119.5px] md:py-[8px] bg-[linear-gradient(to_bottom,#4AA294_0%,#5AB3AD_50%,#4AA294_50%,#4AA294_100%)] rounded-[8px] border-[#5AB2AD] border-[1px] outline-[#5AB2AD] outline-[1px] drop-shadow-[0_8px_0_#592918]">
                     <p class="uppercase text-white text-[1.3rem] md:text-[1.75rem] md:leading-none">EXPLORE MORE</p>
                 </a>
             </div>
@@ -103,14 +117,14 @@
         <!-- Section 2: About Me -->
         <section id="aboutme" class="flex flex-col lg:flex-row items-center justify-center py-16 gap-8 lg:gap-24 px-6 md:px-16 lg:px-[90px] mt-100 lg:mt-60">
             <!-- Kartu Gambar Profil -->
-            <div class="order-1 lg:order-2 shrink-0">
-                <div class="relative w-[240px] md:w-[280px] lg:w-[340px] aspect-[700/1040]">
+            <div class="reveal order-1 lg:order-2 shrink-0">
+                <div id="profile-card" class="relative w-[240px] md:w-[280px] lg:w-[340px] aspect-[700/1040] transition-transform duration-200 ease-out">
                     <img src="fotoku/FATIH.png" alt="Kartu profil" class="absolute inset-0 w-full h-full z-10 pointer-events-none">
                 </div>
             </div>
-            <div class="order-2 lg:order-1 flex flex-col text-center gap-4 max-w-xl">
-                <h2 class="uppercase text-[4rem] md:text-[5rem] text-white [-webkit-text-stroke:1px_#7A3D21] text-shadow-[0_5px_0_#7A3D21]">
-                    ABOUT <span class="hidden lg:inline">ME</span>
+            <div class="reveal reveal-delay-1 order-2 lg:order-1 flex flex-col gap-4 max-w-[560px] text-center lg:text-left">
+                <h2 class="uppercase text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] text-white [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] lg:text-shadow-[0_10px_0_#7A3D21] leading-none">
+                    ABOUT<span class="hidden lg:inline"> ME</span>
                 </h2>
                 <p class="font-times text-[#F9DCB4] text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] leading-snug text-justify">
                     Halo semua aku Fatih, aku dari ITS jurusan Sistem Informasi, aku suka ngoding dan belajar.
@@ -120,6 +134,10 @@
 
         <!-- Section 3: My Skills -->
         <section id="myskills" class="flex justify-center mt-100 px-4">
+            <div class="reveal flex flex-col text-center gap-4">
+            <h2 class="uppercase text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] text-white [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] lg:text-shadow-[0_10px_0_#7A3D21] leading-none">
+                MY SKILLS
+            </h2>
             <div class="relative">
                 <!-- Papan Kayu Desktop & Mobile -->
                 <img src="My Skills/wood plank.svg" alt="Papan kayu" class="hidden md:block lg:w-[769.08px] md:w-[500.17px]">
@@ -130,43 +148,48 @@
                     <h3 class="font-zelda text-[1.8rem] md:text-[2.5rem] lg:text-[3.75rem] leading-tight">
                         Aku tertarik dengan mata kuliah yang ada di sisfor
                     </h3>
-                    <ul class="font-times list-disc list-inside ml-4 md:ml-8 text-[1rem] md:text-[1.5rem] lg:text-[2rem] mt-2">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
+                    <ul class="font-times list-disc ml-8 text-[1rem] md:text-[1.5rem] lg:text-[2rem] mt-2">
+                        <li class="stagger-item transition-transform duration-200 hover:translate-x-2 hover:text-[#4AA294]" style="--i: 0">HTML</li>
+                        <li class="stagger-item transition-transform duration-200 hover:translate-x-2 hover:text-[#4AA294]" style="--i: 1">CSS</li>
+                        <li class="stagger-item transition-transform duration-200 hover:translate-x-2 hover:text-[#4AA294]" style="--i: 2">JavaScript</li>
                     </ul>
 
                     <!-- Tombol "My Experience" di Bawah Papan -->
-                    <div class="flex w-full justify-center items-center mt-4 transition-all duration-100 hover:brightness-90">
-                        <a href="#experience" class="px-[30px] py-[4px] md:px-[60px] md:py-[6px] bg-[linear-gradient(to_bottom,#4AA294_0%,#5AB3AD_50%,#4AA294_50%,#4AA294_100%)] rounded-[8px] border-[#F3B641] border-[1px] outline-[#592918] outline-[1px] drop-shadow-[0_5px_0_#592918]">
+                    <div class="flex w-full justify-center items-center transition-all duration-100">
+                        <a href="#experience" class="btn-shine transition-transform duration-100 hover:-translate-y-0.5 active:translate-y-[6px] active:drop-shadow-[0_2px_0_#592918] absolute bottom-[40px] md:bottom-[25px] lg:bottom-[50px] px-[30px] py-[4px] md:px-[60px] md:py-[6px] hover:brightness-90 bg-[linear-gradient(to_bottom,#4AA294_0%,#5AB3AD_50%,#4AA294_50%,#4AA294_100%)] rounded-[8px] border-[#F3B641] border-[1px] outline-[#592918] outline-[1px] drop-shadow-[0_5px_0_#592918]">
                             <p class="uppercase text-white text-[1rem] md:text-[1.25rem]">MY EXPERIENCE</p>
                         </a>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
         <!-- Section 4: My Experience -->
         <section id="experience" class="mt-100 mb-50">
             <div class="flex flex-col gap-[1rem] items-center">
-                <h2 class="text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] text-white [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] text-center uppercase">
+                <h2 class="text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] text-white [-webkit-text-stroke:1px_#7A3D21] lg:[-webkit-text-stroke:2px_#7A3D21] text-shadow-[0_5px_0_#7A3D21] text-center uppercase reveal">
                     MY EXPERIENCE
                 </h2>
 
                 <!-- Grid Galeri Foto 2x2 -->
-                <div class="flex flex-col md:flex-row gap-[1rem]">
-                    <img class="w-[22.5rem] lg:w-[30rem] object-cover" src="fotoku/foto1.png" alt="Deskripsi foto 1">
-                    <img class="w-[22.5rem] lg:w-[30rem] object-cover" src="fotoku/foto2.png" alt="Deskripsi foto 2">
+                <div class="reveal reveal-left flex flex-col md:flex-row gap-[1rem]">
+                    <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku/foto1.png" alt="Fatih">
+                    <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku/foto2.png" alt="Ayun">
                 </div>
-                <div class="flex flex-col md:flex-row gap-[1rem]">
-                    <img class="w-[22.5rem] lg:w-[30rem] object-cover" src="fotoku/foto3.png" alt="Deskripsi foto 3">
-                    <img class="w-[22.5rem] lg:w-[30rem] object-cover" src="fotoku/foto4.png" alt="Deskripsi foto 4">
+                <div class="reveal reveal-right flex flex-col md:flex-row gap-[1rem]">
+                    <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku/foto3.png" alt="Rahma">
+                    <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku/foto4.png" alt="Zulfa">
+                </div>
+                <div class="reveal reveal-right flex flex-col md:flex-row gap-[1rem]">
+                    <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku/foto3.png" alt="Rahma">
+                    <img class="exp-photo w-[22.5rem] lg:w-[30rem] object-cover rounded-lg cursor-zoom-in transition duration-300 hover:scale-[1.03] hover:brightness-110 hover:drop-shadow-[0_8px_0_#592918]" tabindex="0" role="button" src="fotoku/foto4.png" alt="Zulfa">
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->c
+    <!-- Footer -->
     <footer class="w-full h-[500px] md:h-[350px] lg:h-[600px] bg-[url('footer/bg-footer.png')] bg-cover bg-center px-4 py-8 lg:px-[90px] lg:py-[88px] lg:border-t-[20px] lg:border-t-[#7A3D21] flex justify-center items-center">
 
         <!-- Frame Parent Footer -->
@@ -174,10 +197,10 @@
 
             <!-- Link Menu Footer -->
             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
-                <a class="text-[#C07E4E] hover:text-[#F9DCB4]   text-[1.25rem] lg:text-[32px]" href="#hero">Home</a>
-                <a class="text-[#C07E4E] hover:text-[#F9DCB4] text-[1.25rem] lg:text-[32px]" href="#aboutme">About Me</a>
-                <a class="text-[#C07E4E] hover:text-[#F9DCB4] text-[1.25rem] lg:text-[32px]" href="#myskills">My Skills</a>
-                <a class="text-[#C07E4E] hover:text-[#F9DCB4] text-[1.25rem] lg:text-[32px]" href="#experience">My Experience</a>
+                <a class="text-[#C07E4E] hover:text-[#F9DCB4] transition duration-200 hover:-translate-y-1   text-[1.25rem] lg:text-[32px]" href="#hero">Home</a>
+                <a class="text-[#C07E4E] hover:text-[#F9DCB4] transition duration-200 hover:-translate-y-1 text-[1.25rem] lg:text-[32px]" href="#aboutme">About Me</a>
+                <a class="text-[#C07E4E] hover:text-[#F9DCB4] transition duration-200 hover:-translate-y-1 text-[1.25rem] lg:text-[32px]" href="#myskills">My Skills</a>
+                <a class="text-[#C07E4E] hover:text-[#F9DCB4] transition duration-200 hover:-translate-y-1 text-[1.25rem] lg:text-[32px]" href="#experience">My Experience</a>
             </div>
 
             <!-- Hak Cipta -->
@@ -185,9 +208,22 @@
         </div>
     </footer>
 
+    <!-- Lightbox: foto experience diperbesar saat diklik -->
+    <div id="lightbox" class="lightbox fixed inset-0 z-[70] flex flex-col items-center justify-center gap-4 bg-black/80 backdrop-blur-sm p-4" aria-hidden="true">
+        <button id="lightbox-close" class="absolute top-4 right-4 flex items-center justify-center w-[48px] h-[48px] bg-[#4C1C0E] rounded-lg hover:brightness-125" aria-label="Tutup foto">
+            <img src="Navbar/exit.svg" alt="" class="h-[38.97px] w-[38.97px]">
+        </button>
+        <img id="lightbox-img" class="max-h-[80vh] max-w-full rounded-lg border-4 border-[#7A3D21]" alt="">
+        <p id="lightbox-caption" class="font-times text-[#F9DCB4] text-[1.25rem] text-center"></p>
+    </div>
+
+    <!-- Tombol kembali ke atas -->
+    <button id="backToTop" class="back-to-top fixed bottom-6 right-6 z-[55] w-[56px] h-[56px] rounded-[8px] bg-[linear-gradient(to_bottom,#4AA294_0%,#5AB3AD_50%,#4AA294_50%,#4AA294_100%)] border-[1px] border-[#5AB2AD] outline-[1px] outline-[#592918] drop-shadow-[0_5px_0_#592918] font-times text-white text-[1.5rem] hover:-translate-y-0.5 hover:brightness-110 active:translate-y-[5px] active:drop-shadow-[0_0_0_#592918]" aria-label="Kembali ke atas">&#9650;</button>
+
     <!-- Script JavaScript -->
     <script src="script.js"></script>
     <script src="JS/scroll.js"></script>
+    <script src="JS/interactive.js"></script>
 </body>
 
 </html>

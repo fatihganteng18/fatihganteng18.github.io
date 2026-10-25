@@ -28,3 +28,12 @@ if (menuButton) {
         }
     });
 }
+
+// Tutup menu mobile saat salah satu link diklik
+if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) menuButton.click();
+        });
+    });
+}
